@@ -1,7 +1,6 @@
 //post man api
 //if we want to terminate the fuction or don't want to use the next middleware we will give the responce over here and don't use the next() function .
 
-
 const express = require("express");
 const fs = require("fs")
 const users = require("./MOCK_DATA.json")
