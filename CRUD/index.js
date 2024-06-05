@@ -9,6 +9,7 @@ connectDb()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+//git api
 app.get("/api/users", async (req, res) => {
     try {
         const userData = await userModle.find({})
@@ -52,7 +53,7 @@ app.post('/api/users', async (req, res) => {
         })
     }
 })
-
+//delete api
 app.delete("/api/users/:id", async (req, res) => {
     try {
         console.log(req.params);
@@ -70,6 +71,7 @@ app.delete("/api/users/:id", async (req, res) => {
 
     }
 })
+//put api
 app.put('/api/users/:userId', async (req, res) => {
     try {
         // console.log(req.params);
