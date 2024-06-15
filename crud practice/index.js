@@ -1,3 +1,4 @@
+
 import express from "express"
 import connectDb from "./config/database.js"
 import userModel from "./models/userSchema.js"
