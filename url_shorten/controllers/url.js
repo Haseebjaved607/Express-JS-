@@ -16,9 +16,13 @@ async function handleGenerateNewShortUrl(req, res) {
 }
 
 async function redirectUrlToWeb(req, res) {
-    const shortid = req.param.shortid;
+    console.log(req.params)
+    // return 
+    const { shortId } = req.params;
+    // console.log(shortId)
+    // return 
     const entry = await URL.findOneAndUpdate({
-        shortid
+        shortId
     }, {
         $push: {
             visitHistory: {
@@ -26,14 +30,17 @@ async function redirectUrlToWeb(req, res) {
             }
         }
     })
-    res.redirect(entry.redirectUrl)
 
+    console.log("entry", entry)
+    res.redirect(entry?.redirectUrl)
 }
 
 async function handleGetAnalytic(req, res) {
-
-    const id = req.param.id;
-    const result = await URL.findOne({ id })
+    // console.log(req.params);
+    const { shortId } = req.params
+    // return 
+    // const {shortId} = req.params;
+    const result = await URL.findOne({ shortId })
     return res.json({
         totalClicks: result.visitHistory.length,
         analytic: result.visitHistory,

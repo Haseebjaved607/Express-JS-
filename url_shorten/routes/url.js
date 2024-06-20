@@ -11,8 +11,8 @@ routes.post("/", handleGenerateNewShortUrl)
 //     return res.send("jfhfheuue")
 // })
 
-routes.get("/:shortid", redirectUrlToWeb)
+routes.get("/api/:shortId", redirectUrlToWeb)
 
-routes.get("/analytic/:id" ,handleGetAnalytic)
+routes.get("/analytic/:shortId" ,handleGetAnalytic)
 
 export default routes;
