@@ -17,6 +17,9 @@ app.get("/users", (req, res) => {
     </ul> 
     `;
 
+
+
+     console.log(html)
     res.send(html)
 });
 
