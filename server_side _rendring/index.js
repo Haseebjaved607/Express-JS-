@@ -1,4 +1,5 @@
 import express from "express"
+import mongoose from "mongoose";
 import routes from "./routes/url.js";
 import connectDb from "./config/db.js";
 import path from "path"
@@ -17,15 +18,15 @@ app.use(express.urlencoded({ extended: true }))
 app.use(routes)
 connectDb()
 
-app.use('/url' , routes)
-app.use('/',staticRoute)
+app.use('/url', routes)
+app.use('/', staticRoute)
 
 // app.get("/get", async (req, res) => {
 //     const allUrls = await URL.find({})
 //    return res.render("home",{
 //     urls:allUrls
 //    })
-   
+
 // is thra se b render kr sakty hn server side pr but ye sai ni ha best way ha templating engine use krna like EJS PUG etc 
 //     return res.end(`
 //         <html>

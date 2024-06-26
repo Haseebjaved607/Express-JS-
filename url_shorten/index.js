@@ -18,10 +18,10 @@ connectDb()
 
 // app.use(urlrouter)
 
-// app.get("/get", async (req, res) => {
-//     const allUrls = await URL.find({})
-//     return res.end("<h1>hey form server </h1>")
-// })
+app.get("/get", async (req, res) => {
+    const allUrls = await URL.find({})
+    return res.render("home")
+})
 
 
 app.listen(PORT, () => console.log(`server is running at port : ${PORT}`))    

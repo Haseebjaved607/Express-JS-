@@ -10,7 +10,7 @@ routes.post("/", handleGenerateNewShortUrl)
 // routes.get("/",(req,res)=>{
 //     return res.send("jfhfheuue")
 // })
-
+// dynamic routes 
 routes.get("/api/:shortId", redirectUrlToWeb)
 
 routes.get("/analytic/:shortId" ,handleGetAnalytic)

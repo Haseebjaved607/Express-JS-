@@ -8,6 +8,7 @@ const connectDb = async()=>{
         console.log(`monogdb is connect ${connect.connection.host}`);
     } catch (error) {
         console.log(error.message);
+        process.exit(1)
     }
 }
 export default connectDb
