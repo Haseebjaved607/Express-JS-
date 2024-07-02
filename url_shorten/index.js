@@ -3,6 +3,9 @@ import routes from "./routes/url.js";
 import connectDb from "./config/db.js";
 import path from "path"
 import URL from "./model/url.js";
+import cookieParser from "cookie-parser";
+import {staticRouter} from "./routes/staticRoute.js"
+
 
 
 const app = express()
@@ -10,11 +13,14 @@ const PORT = 8001;
 
 app.set("view engine", "ejs")
 app.set("views", path.resolve("./views"))
+connectDb()
 
+app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
 app.use(routes)
-connectDb()
+app.use(staticRouter)
 
 // app.use(urlrouter)
 

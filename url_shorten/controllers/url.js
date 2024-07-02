@@ -32,7 +32,7 @@ const  handleGenerateNewShortUrl=async(req, res) =>{
             }
         })
 
-        console.log("entry", entry)
+        // console.log("entry", entry)
         res.redirect(entry?.redirectUrl)
     } catch (error) {
         console.log(error.message);
